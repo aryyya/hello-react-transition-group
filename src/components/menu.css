@@ -8,6 +8,7 @@
   font-family: sans-serif;
   padding: 25px;
   user-select: none;
+  position: relative;
 }
 
 .menu__toggler {
@@ -46,20 +47,31 @@
   text-align: center;
 }
 
+.menu__items {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition:
+    transform var(--menu-fade-timeout) ease,
+    opacity   var(--menu-fade-timeout) ease;
+}
+
 .menu__fade-enter {
+  transform: scale(0);
   opacity: 0;
 }
 
 .menu__fade-enter-active {
+  transform: scale(1);
   opacity: 1;
-  transition: opacity var(--menu-fade-timeout);
 }
 
 .menu__fade-exit {
+  transform: scale(1);
   opacity: 1;
 }
 
 .menu__fade-exit-active {
-  opacity: 0;
-  transition: opacity var(--menu-fade-timeout);
+  transform: scale(0);
+  opacity: 1;
 }

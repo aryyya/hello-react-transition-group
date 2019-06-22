@@ -1,0 +1,31 @@
+:root {
+  --menu-background-color: Orange;
+  --menu-border-radius: 5px;
+}
+
+.menu {
+  font-family: sans-serif;
+  padding: 25px;
+}
+
+.menu__toggler {
+  background-color: var(--menu-background-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--menu-border-radius);
+  font-size: 18px;
+  width: 100px;
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.menu__list-item {
+  background-color: var(--menu-background-color);
+  padding: 10px;
+  width: 100px;
+  border-radius: var(--menu-border-radius);
+  margin: 5px 0;
+  text-align: center;
+}

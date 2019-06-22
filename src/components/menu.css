@@ -1,11 +1,13 @@
 :root {
   --menu-background-color: Orange;
   --menu-border-radius: 5px;
+  --menu-fade-timeout: 350ms;
 }
 
 .menu {
   font-family: sans-serif;
   padding: 25px;
+  user-select: none;
 }
 
 .menu__toggler {
@@ -17,8 +19,22 @@
   width: 100px;
 }
 
+.menu__toggler:hover {
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+
+.menu__toggler:focus {
+  outline: none;
+}
+
+.menu__toggler:active {
+  filter: brightness(1.1);
+}
+
 .menu__list {
   list-style: none;
+  margin-top: 10px;
 }
 
 .menu__list-item {
@@ -28,4 +44,22 @@
   border-radius: var(--menu-border-radius);
   margin: 5px 0;
   text-align: center;
+}
+
+.menu__fade-enter {
+  opacity: 0;
+}
+
+.menu__fade-enter-active {
+  opacity: 1;
+  transition: opacity var(--menu-fade-timeout);
+}
+
+.menu__fade-exit {
+  opacity: 1;
+}
+
+.menu__fade-exit-active {
+  opacity: 0;
+  transition: opacity var(--menu-fade-timeout);
 }

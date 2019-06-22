@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cn from 'classnames'
 import './menu.css'
+import { CSSTransition } from 'react-transition-group'
 
 const Menu = () => {
   const [ showBalloon, setShowBalloon ] = useState(false)
@@ -16,14 +17,21 @@ const Menu = () => {
       >
         Menu
       </button>
-      <div className="menu__items">
-        <ul className="menu__list">
-          <li className="menu__list-item">Home</li>
-          <li className="menu__list-item">Profile</li>
-          <li className="menu__list-item">Favorites</li>
-          <li className="menu__list-item">Sign out</li>
-        </ul>
-      </div>
+      <CSSTransition
+        in={showBalloon}
+        timeout={350}
+        classNames="menu__fade"
+        unmountOnExit
+      >
+        <div className="menu__items">
+          <ul className="menu__list">
+            <li className="menu__list-item">Home</li>
+            <li className="menu__list-item">Profile</li>
+            <li className="menu__list-item">Favorites</li>
+            <li className="menu__list-item">Sign out</li>
+          </ul>
+        </div>
+      </CSSTransition>
     </div>
   )
 }

@@ -1,0 +1,37 @@
+.favs {
+  display: flex;
+  width: 100vw;
+}
+
+.favs > * {
+  flex: 1;
+}
+
+.favs ul {
+  list-style: none;
+}
+
+.favs li {
+  user-select: none;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #eee;
+}
+
+.favs li:hover {
+  cursor: pointer;
+}
+
+li.favs__item {
+  transition: background-color 350ms ease;
+}
+
+li.favs__item--is-fav {
+  background-color: orange;
+}
+
+.favs__title {
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}

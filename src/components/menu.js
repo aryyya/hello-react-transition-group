@@ -4,7 +4,7 @@ import './menu.css'
 import { CSSTransition } from 'react-transition-group'
 
 const Menu = () => {
-  const [ showBalloon, setShowBalloon ] = useState(true)
+  const [ showBalloon, setShowBalloon ] = useState(false)
   const [ showHighlightedMenuItem, setShowHighlightMenuItem ] = useState(false)
 
   const toggle = () => setShowBalloon(!showBalloon)

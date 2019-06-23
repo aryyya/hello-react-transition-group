@@ -4,7 +4,7 @@ import './menu.css'
 import { CSSTransition } from 'react-transition-group'
 
 const Menu = () => {
-  const [ showBalloon, setShowBalloon ] = useState(false)
+  const [ showBalloon, setShowBalloon ] = useState(true)
   const toggle = () => setShowBalloon(!showBalloon)
 
   return (
@@ -22,6 +22,7 @@ const Menu = () => {
         timeout={350}
         classNames="menu__fade"
         unmountOnExit
+        appear
       >
         <div className="menu__items">
           <ul className="menu__list">

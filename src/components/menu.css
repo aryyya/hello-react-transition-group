@@ -57,12 +57,14 @@
     opacity   var(--menu-fade-timeout) ease;
 }
 
-.menu__fade-enter {
+.menu__fade-enter,
+.menu__fade-appear {
   transform: scale(0);
   opacity: 0;
 }
 
-.menu__fade-enter-active {
+.menu__fade-enter-active,
+.menu__fade-appear-active {
   transform: scale(1);
   opacity: 1;
 }

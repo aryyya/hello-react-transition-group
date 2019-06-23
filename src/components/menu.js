@@ -5,7 +5,10 @@ import { CSSTransition } from 'react-transition-group'
 
 const Menu = () => {
   const [ showBalloon, setShowBalloon ] = useState(true)
+  const [ showHighlightedMenuItem, setShowHighlightMenuItem ] = useState(false)
+
   const toggle = () => setShowBalloon(!showBalloon)
+  const toggleHighlightedMenuItem = () => setShowHighlightMenuItem(!showHighlightedMenuItem)
 
   return (
     <div className="menu">
@@ -23,10 +26,22 @@ const Menu = () => {
         classNames="menu__fade"
         unmountOnExit
         appear
+        onEnter={() => console.log('onEnter')}
+        onEntering={() => console.log('onEntering')}
+        onEntered={toggleHighlightedMenuItem}
+        onExit={() => console.log('onExit')}
+        onExiting={() => console.log('onExiting')}
+        onExited={toggleHighlightedMenuItem}
       >
         <div className="menu__items">
           <ul className="menu__list">
-            <li className="menu__list-item">Home</li>
+            <li
+              className={cn('menu__list-item', {
+                'menu__list-item--active': showHighlightedMenuItem
+              })}
+            >
+              Home
+            </li>
             <li className="menu__list-item">Profile</li>
             <li className="menu__list-item">Favorites</li>
             <li className="menu__list-item">Sign out</li>

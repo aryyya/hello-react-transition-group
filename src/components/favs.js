@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import './favs.css'
 import cn from 'classnames'
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 
 const Favs = () => {
   const items = [
@@ -42,19 +46,24 @@ const Favs = () => {
       </div>
       <div>
         <h3 className="favs__title">Favorites</h3>
-        <ul className="favs__favs">
+        <TransitionGroup component="ul">
           {items
             .filter(item => favs.includes(item.id))
             .map(item => (
-              <li
-                className="favs__fav"
+              <CSSTransition
+                timeout={500}
                 key={item.id}
-                onClick={() => remFav(item.id)}
+                classNames="favs__fade"
               >
-                {item.name}
-              </li>
+                <li
+                  className="favs__fav"
+                  onClick={() => remFav(item.id)}
+                >
+                  {item.name}
+                </li>
+              </CSSTransition>
             ))}
-        </ul>
+        </TransitionGroup>
       </div>
     </div>
   )

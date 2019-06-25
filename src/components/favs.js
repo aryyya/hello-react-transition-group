@@ -53,10 +53,10 @@ const Favs = () => {
               <CSSTransition
                 timeout={500}
                 key={item.id}
-                classNames="favs__fade"
+                classNames="fade"
               >
                 <li
-                  className="favs__fav"
+                  className="favs__item favs__fav"
                   onClick={() => remFav(item.id)}
                 >
                   {item.name}

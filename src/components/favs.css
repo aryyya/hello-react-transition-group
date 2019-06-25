@@ -5,7 +5,7 @@
   --favs-item-margin-top: 10px;
   --favs-item-margin-bottom: 10px;
   --favs-item-padding: 10px;
-  --fade-timeout: 400ms;
+  --fade-timeout: 500ms;
 }
 
 .favs {
@@ -19,13 +19,16 @@
 
 .favs ul {
   list-style: none;
+  perspective: 1000px;
 }
 
 .favs__item {
   user-select: none;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px;
   background-color: #eee;
+  border-radius: 100px;
+  text-align: center;
 }
 
 .favs li:hover {
@@ -34,6 +37,7 @@
 
 .favs__item {
   transition: background-color 500ms ease;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
 }
 
 .favs__item--is-fav {
@@ -51,32 +55,23 @@
   max-height: 0;
   padding: 0;
   margin: 0;
+  transform: rotateY(90deg);
 }
 
-.fade-enter-active {
-  transition:
-    max-height var(--fade-timeout) ease,
-    opacity var(--fade-timeout) ease,
-    padding-top var(--fade-timeout) ease,
-    padding-bottom var(--fade-timeout) ease,
-    margin var(--fade-timeout) ease;
-  opacity: 1;
-  max-height: 38px;
-  padding: var(--favs-item-padding);
-  margin: 10px 0;
-}
-
+.fade-enter-active,
 .fade-exit {
   transition:
     max-height var(--fade-timeout) ease,
     opacity var(--fade-timeout) ease,
     padding-top var(--fade-timeout) ease,
     padding-bottom var(--fade-timeout) ease,
-    margin var(--fade-timeout) ease;
+    margin var(--fade-timeout) ease,
+    transform var(--fade-timeout) ease;
+  transform: rotateY(0);
   opacity: 1;
   max-height: 38px;
   padding: var(--favs-item-padding);
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .fade-exit-active {
@@ -85,4 +80,5 @@
   padding-top: 0;
   padding-bottom: 0;
   margin-top: calc(var(--favs-item-margin-top) * -1);
+  transform: rotateY(90deg);
 }

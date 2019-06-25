@@ -62,11 +62,11 @@
 .fade-exit {
   transition:
     max-height var(--fade-timeout) ease,
-    opacity var(--fade-timeout) ease,
+    opacity var(--fade-timeout) ease .1s,
     padding-top var(--fade-timeout) ease,
     padding-bottom var(--fade-timeout) ease,
     margin var(--fade-timeout) ease,
-    transform var(--fade-timeout) ease;
+    transform var(--fade-timeout) ease .1s;
   transform: rotateY(0);
   opacity: 1;
   max-height: 38px;

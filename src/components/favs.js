@@ -51,7 +51,7 @@ const Favs = () => {
             .filter(item => favs.includes(item.id))
             .map(item => (
               <CSSTransition
-                timeout={500}
+                timeout={400}
                 key={item.id}
                 classNames="fade"
               >

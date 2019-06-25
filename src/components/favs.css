@@ -5,7 +5,7 @@
   --favs-item-margin-top: 10px;
   --favs-item-margin-bottom: 10px;
   --favs-item-padding: 10px;
-  --fade-timeout: 500ms;
+  --fade-timeout: 400ms;
 }
 
 .favs {

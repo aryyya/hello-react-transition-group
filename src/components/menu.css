@@ -29,7 +29,6 @@
 .menu__links {
   list-style: none;
   display: flex;
-  /* margin-left: 10px; */
 }
 
 .menu__link {

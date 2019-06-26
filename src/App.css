@@ -19,3 +19,25 @@ body {
   padding: 0 20px;
   padding-bottom: 20px;
 }
+
+.swipe-enter {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.swipe-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms ease;
+}
+
+.swipe-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms ease;
+}
+
+.swipe-exit-active {
+  opacity: 0;
+  transform: translateX(+100px);
+}

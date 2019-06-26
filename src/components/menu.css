@@ -20,6 +20,11 @@
 
 .menu__toggler:hover {
   cursor: pointer;
+  filter: brightness(1.05);
+}
+
+.menu__toggler:active {
+  filter: brightness(1.1);
 }
 
 .menu__toggler:focus {
@@ -40,6 +45,11 @@
 
 .menu__link:hover {
   cursor: pointer;
+  filter: brightness(1.05);
+}
+
+.menu__link:active {
+  filter: brightness(1.1);
 }
 
 .menu__link:first-child {

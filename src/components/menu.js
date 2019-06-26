@@ -2,7 +2,21 @@ import React, { useState } from 'react'
 import cn from 'classnames'
 import './menu.css'
 import { CSSTransition } from 'react-transition-group'
-import { Link } from 'react-router-dom'
+import {
+  NavLink,
+  withRouter
+} from 'react-router-dom'
+
+const SameLink = withRouter(({
+  location,
+  to,
+  children,
+  className
+}) => (
+  location.pathname === to 
+    ? <span className={className}>{children}</span>
+    : <NavLink className={className} to={to}>{children}</NavLink>
+))
 
 const Menu = () => {
   const [ showBalloon, setShowBalloon ] = useState(false)
@@ -22,15 +36,25 @@ const Menu = () => {
         <CSSTransition
           in={showBalloon}
           classNames="slide"
-          timeout={500}
+          timeout={300}
           unmountOnExit
         >
           <ul className="menu__links">
             <li className="menu__link">
-              <Link className="menu__link-link" to="/">favs</Link>
+              <SameLink
+                className="menu__link-link"
+                to="/"
+              >
+                favs
+              </SameLink>
             </li>
             <li className="menu__link">
-              <Link className="menu__link-link" to="/about">about</Link>
+              <SameLink
+                className="menu__link-link"
+                to="/about"
+              >
+                about
+              </SameLink>
             </li>
           </ul>
         </CSSTransition>

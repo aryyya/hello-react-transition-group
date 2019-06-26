@@ -3,8 +3,7 @@ import './App.css'
 
 import {
   Route,
-  Switch,
-  withRouter
+  Switch
 } from 'react-router-dom'
 
 import {
@@ -16,21 +15,17 @@ import Menu from './components/menu'
 import Favs from './components/favs'
 import About from './components/about'
 
-const App = ({
-  location
-}) => {
-  console.log(location.key)
-
-  return (
-    <div className="app">
-      <Menu />
+const App = () => (
+  <div className="app">
+    <Menu />
+    <Route render={({ location }) => (
       <TransitionGroup>
         <CSSTransition
           key={location.key}
           classNames="swipe"
-          timeout={500}
+          timeout={300}
         >
-          <Switch>
+          <Switch location={location}>
             <Route
               exact
               path="/"
@@ -43,8 +38,8 @@ const App = ({
           </Switch>
         </CSSTransition>
       </TransitionGroup>
-    </div>
-  )
-}
+    )} />
+  </div>
+)
 
-export default withRouter(App)
+export default App

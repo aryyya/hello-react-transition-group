@@ -62,6 +62,10 @@
   color: inherit;
 }
 
+.menu__link-link.active {
+  background-color: #aaa;
+}
+
 .slide-enter {
   opacity: 0;
   max-width: 0;

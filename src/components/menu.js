@@ -14,8 +14,18 @@ const SameLink = withRouter(({
   className
 }) => (
   location.pathname === to 
-    ? <span className={className}>{children}</span>
-    : <NavLink className={className} to={to}>{children}</NavLink>
+    ? <span
+        className={className + ' active'}
+      >
+        {children}
+      </span>
+    : <NavLink
+        exact
+        className={className}
+        to={to}
+      >
+        {children}
+      </NavLink>
 ))
 
 const Menu = () => {

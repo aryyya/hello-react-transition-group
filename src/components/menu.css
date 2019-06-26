@@ -46,6 +46,11 @@
   margin-left: 20px;
 }
 
+.menu__link-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .slide-enter {
   opacity: 0;
   max-width: 0;

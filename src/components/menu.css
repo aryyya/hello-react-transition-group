@@ -1,28 +1,24 @@
-:root {
-  --menu-background-color: Orange;
-  --menu-border-radius: 5px;
-  --menu-fade-timeout: 350ms;
-  --menu-toggler-width: 100px;
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
 }
 
-.menu {
-  font-family: sans-serif;
-  padding: 25px;
-  user-select: none;
-  position: relative;
+.menu__content {
+  display: flex;
+  align-items: center;
 }
 
 .menu__toggler {
-  background-color: var(--menu-background-color);
+  background-color: orange;
   padding: 10px 20px;
+  font-size: 20px;
   border: none;
-  border-radius: var(--menu-border-radius);
-  font-size: 18px;
-  width: var(--menu-toggler-width);
+  border-radius: 10px;
 }
 
 .menu__toggler:hover {
-  filter: brightness(1.05);
   cursor: pointer;
 }
 
@@ -30,56 +26,45 @@
   outline: none;
 }
 
-.menu__toggler:active {
-  filter: brightness(1.1);
-}
-
-.menu__list {
+.menu__links {
   list-style: none;
-  margin-top: 10px;
+  display: flex;
+  /* margin-left: 10px; */
 }
 
-.menu__list-item {
-  background-color: var(--menu-background-color);
-  padding: 10px;
-  width: calc(var(--menu-toggler-width) * 1.1);
-  border-radius: var(--menu-border-radius);
-  margin: 5px 0;
-  text-align: center;
-  transition: color 350ms ease;
+.menu__link {
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0 10px;
 }
 
-.menu__list-item--active {
-  color: white;
+.menu__link:hover {
+  cursor: pointer;
 }
 
-.menu__items {
-  position: absolute;
-  width: 0;
-  height: 0;
-  transition:
-    transform var(--menu-fade-timeout) ease,
-    opacity   var(--menu-fade-timeout) ease;
+.menu__link:first-child {
+  margin-left: 20px;
 }
 
-.menu__fade-enter,
-.menu__fade-appear {
-  transform: scale(0);
+.slide-enter {
   opacity: 0;
+  max-width: 0;
 }
 
-.menu__fade-enter-active,
-.menu__fade-appear-active {
-  transform: scale(1);
+.slide-enter-active {
   opacity: 1;
+  transition: all 500ms ease;
+  max-width: 159.39px;
 }
 
-.menu__fade-exit {
-  transform: scale(1);
+.slide-exit {
   opacity: 1;
+  transition: all 500ms ease;
+  max-width: 159.39px;
 }
 
-.menu__fade-exit-active {
-  transform: scale(0);
-  opacity: 1;
+.slide-exit-active {
+  opacity: 0;
+  max-width: 0;
 }

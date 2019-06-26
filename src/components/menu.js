@@ -12,6 +12,32 @@ const Menu = () => {
 
   return (
     <div className="menu">
+      <div className="menu__content">
+        <button
+          className={cn('menu__toggler', {
+            'menu__toggler--active': showBalloon
+          })}
+          onClick={toggle}
+        >
+          Menu
+        </button>
+        <CSSTransition
+          in={showBalloon}
+          classNames="slide"
+          timeout={500}
+          unmountOnExit
+        >
+          <ul className="menu__links">
+            <li className="menu__link">favs</li>
+            <li className="menu__link">about</li>
+          </ul>
+        </CSSTransition>
+      </div>
+    </div>
+  )
+
+  return (
+    <div className="menu">
       <button
         className={cn('menu__toggler', {
           'menu__toggler--active': showBalloon
